@@ -4,7 +4,7 @@ public class Language extends File {
 
 	
 	public Language(int length){
-		String [] language = new String[length];
+		 language = new String[length];
 	}
 	
 public String getFromFile(int position){

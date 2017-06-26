@@ -4,7 +4,7 @@ private String[] settings;
 
 	
 	public Settings(int length){
-		String [] Settings = new String[length];
+		 Settings = new String[length];
 	}
 	
 public String getFromFile(int position){

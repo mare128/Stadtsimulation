@@ -5,7 +5,7 @@ private String[][] mapArray;
 
 // numeration starts with 0
 	public Map(int length){
-		String [][] mapArray = new String[length][10];
+		 mapArray = new String[length][10];
 		
 	}
 	

@@ -6,7 +6,7 @@ public class Saves extends File {
 	private int lengthArray;
 
 	public Saves(int length){
-		String [][] savesArray = new String[length][10];
+		savesArray = new String[length][10];
 		lengthArray = length;
 	}
 

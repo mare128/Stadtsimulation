@@ -1,13 +1,13 @@
 package Zeichenfenster;
 
-import java.awt.event.MouseEvent; 
-import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent; import java.awt.event.MouseListener;
 import java.awt.event.KeyListener; 
 import java.awt.event.KeyEvent;
 
-public class Mausereignisse implements MouseListener, KeyListener { 
 
-    public Mausereignisse(MyFrame j) {
+public class MouseAndKeyListener implements MouseListener, KeyListener { 
+	
+    public MouseAndKeyListener(MyFrame j) {
         j.addMouseListener(this); 
         j.addKeyListener(this);
     } 
@@ -39,6 +39,7 @@ public class Mausereignisse implements MouseListener, KeyListener {
     public void mouseExited(MouseEvent e) { 
         System.out.println("Mouse exited at " + e.getPoint()); 
     }  
+    
     public void keyTyped(KeyEvent e) {
         System.out.println("KeyTyped: ");
         if(e.getKeyChar() == KeyEvent.CHAR_UNDEFINED){
@@ -63,4 +64,5 @@ public class Mausereignisse implements MouseListener, KeyListener {
         System.out.println("Taste: " + e.getKeyChar() + ", Code: " + e.getKeyCode());
         System.out.println("---");
     }
+    
 }

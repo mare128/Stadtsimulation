@@ -20,7 +20,8 @@ public class TonSpieler {
     public static void tonDateiAbspielen(String dateiName) {
         final String d = dateiName;
         new Thread() {
-            public void run() {
+            @Override
+			public void run() {
                 URL u = TonSpieler.class.getResource(ordnerpfad + d);
                 if (u == null || u.getPath() == null)
                     return;

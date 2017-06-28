@@ -4,9 +4,10 @@ private String[] settings;
 
 	
 	public Settings(int length){
-		 Settings = new String[length];
+		 settings = new String[length];
 	}
 	
+@Override
 public String getFromFile(int position){
 	return settings[position];
 };

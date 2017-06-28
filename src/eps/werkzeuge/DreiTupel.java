@@ -35,7 +35,8 @@ public class DreiTupel<A, B, C>
         dritte = c;
     }
 
-    public String toString() {
+    @Override
+	public String toString() {
         return "(" + erste + ", " + zweite + ", " + dritte + ")";
     }
 

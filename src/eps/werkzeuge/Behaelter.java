@@ -169,7 +169,8 @@ public class Behaelter<Typ> implements Iterable<Typ> {
      * System.out.println(string1)
      * via Direkteingabe-Fenster ab.
      */    
-    public String toString() {
+    @Override
+	public String toString() {
         return speicher.toString(); 
     } 
 
@@ -198,7 +199,8 @@ public class Behaelter<Typ> implements Iterable<Typ> {
     /** 
      * In der 10.Klasse nicht von Interesse
      */    
-    public Iterator<Typ> iterator() { return speicher.iterator();}    
+    @Override
+	public Iterator<Typ> iterator() { return speicher.iterator();}    
     
     /**
      * Kann nach Kapitel 2 verwendet werden.

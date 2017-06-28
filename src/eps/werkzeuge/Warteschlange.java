@@ -113,6 +113,7 @@ public class Warteschlange<Typ> {
      * System.out.println(string1)
      * via Direkteingabe-Fenster ab.
      */    	
+	@Override
 	public String toString() {
 		return speicher.toString();
 	}

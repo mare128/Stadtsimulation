@@ -42,7 +42,8 @@ public class ZweiTupel<A, B> {
         zweite = b;
     }
 
-    public String toString() {
+    @Override
+	public String toString() {
         return "(" + erste + ", " + zweite + ")";
     }
 

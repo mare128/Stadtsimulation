@@ -184,6 +184,7 @@ public class Liste<Typ> implements Iterable<Typ> {
      * System.out.println(string1)
      * via Direkteingabe-Fenster ab.
      */    	
+	@Override
 	public String toString() {
 		return speicher.toString();
 	} 
@@ -209,7 +210,8 @@ public class Liste<Typ> implements Iterable<Typ> {
      * Methode dieser Klassendefinition veroeffentlicht werden (oder das Attribut etc.
      * komplett aus der Klassendefinition entfernt werden.)
      */
-    public Iterator<Typ> iterator() { return speicher.iterator();}    
+    @Override
+	public Iterator<Typ> iterator() { return speicher.iterator();}    
     
     /**
      * Kann nach Kapitel 2 verwendet werden.

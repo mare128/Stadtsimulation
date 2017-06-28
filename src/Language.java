@@ -7,6 +7,7 @@ public class Language extends File {
 		 language = new String[length];
 	}
 	
+@Override
 public String getFromFile(int position){
 	return language[position];
 }

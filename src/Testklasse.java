@@ -2,7 +2,7 @@
 public class Testklasse {
 
 	public static void main(String[] args) {
-		System.out.println("Hallo Welt7!");
+		System.out.println("Hallo Welt28!");
 	}
 
 }

@@ -180,6 +180,7 @@ lengthHousesArray = lengthHouses;
 	
 	public void createMediumHousesMap(){
 		//write() content map
+		
 	}
 
 	public void createLargeMap(){

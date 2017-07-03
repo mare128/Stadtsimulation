@@ -9,6 +9,8 @@ import Zeichenfenster.MyFrame;
 public class MyButton implements ActionListener{
 	
 	private JButton button;
+	private boolean buttonPressed;
+	private ActionEvent e;
 
 	public MyButton(MyFrame f, int x, int y, int width, int height, String buttonName){
 		button = new JButton(buttonName);
@@ -17,7 +19,6 @@ public class MyButton implements ActionListener{
         button.setVisible(true);
         button.addActionListener(this);
         f.getContentPane().add(button);
-        
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -25,4 +26,10 @@ public class MyButton implements ActionListener{
             System.out.println("Ihr Spiel beginnt!");
         }
     }
+	
+	public void buttonPressed(){
+		if(button.isSelected()){
+			System.out.println("pressed");
+		}
+	}
 }

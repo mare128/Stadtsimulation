@@ -10,10 +10,11 @@ public class Starter {
 
 	
 	public static void main(String[] args) {
-		MyFrame j = new MyFrame();
+		MyFrame j = new MyFrame(Color.gray);
 		MyButton button1 = new MyButton(j, 100, 30, 70, 20, "test");
-		new MouseAndKeyListener(j);
 		new Rechteck(j, 600, 34, 200, 300, Color.green);
+		new MouseAndKeyListener(j);
+		button1.buttonPressed();
 	}
 
 }

@@ -14,6 +14,7 @@ public class Starter {
 		MyButton button1 = new MyButton(j, 100, 30, 70, 20, "test");
 		new MouseAndKeyListener(j);
 		new Rechteck(j, 600, 34, 200, 300, Color.green);
+		
 	}
 
 }

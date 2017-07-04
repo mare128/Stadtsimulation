@@ -8,15 +8,11 @@ public class Customize {
 	public Customize(SimulationCalculator sc){
 		this.SimulationCalculator = sc;
 		buildings = new int[2000];
-		SimulationCalculator.getMap();
+		buildings = SimulationCalculator.getMap();
 		
 	}
 	
 	public void changeFunction(int ID, int function){
 		buildings[ID]= function;
-	}
-	public void reserveBuilding(int ID, int function){
-		
-		
 	}
 }

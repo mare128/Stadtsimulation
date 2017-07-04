@@ -2,11 +2,11 @@ package Simulation;
 
 public class SimulationCalculator {
 
-	String[] map;
+	int[] map;
+	String[] settings;
 	private SimulationCalculator SimulationCalculator;
 	
 	public SimulationCalculator(){
-		enterMenu();
 		
 	}
 	
@@ -28,8 +28,7 @@ public class SimulationCalculator {
 		
 	}
 	
-	public String[] getMap(){
-		
+	public int[] getMap(){ 
 		return map;
 	}
 }

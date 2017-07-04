@@ -42,9 +42,9 @@ String[] values= new String[(lengthSettings+1)];
         
         	 values = zeile.split(";");
              
-                                  for (int position = 0; position < (lengthSettings); position++) {
+                              for (int position = 0; position < (lengthSettings); position++) {
                                   
-                                	  settings[position]= values[position];
+                           	  settings[position]= values[position];
                                 	
                                   
                                   }             

@@ -1,12 +1,22 @@
 package Simulation;
 
+import java.awt.Color;
+
+import Zeichenfenster.MouseAndKeyListener;
+import Zeichenfenster.MyButton;
+import Zeichenfenster.MyFrame;
+import Zeichenfenster.Rechteck;
+
 public class SimulationCalculator {
 
 	int[] map;
+	Rechteck[] buildings;
 	String[] settings;
 	private SimulationCalculator SimulationCalculator;
 	
 	public SimulationCalculator(){
+		MyFrame j = new MyFrame();
+		new MouseAndKeyListener(j);
 		
 	}
 	

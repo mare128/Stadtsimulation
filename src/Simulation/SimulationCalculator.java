@@ -2,7 +2,7 @@ package Simulation;
 
 public class SimulationCalculator {
 
-	String[][] map;
+	String[] map;
 	private SimulationCalculator SimulationCalculator;
 	
 	public SimulationCalculator(){
@@ -28,7 +28,7 @@ public class SimulationCalculator {
 		
 	}
 	
-	public String[][] getMap(){
+	public String[] getMap(){
 		
 		return map;
 	}

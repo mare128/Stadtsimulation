@@ -26,6 +26,16 @@ widthArray = width;
 		array[arrayPosition][2]= direction;
 
 	}
+	
+	public Wraperclass getCars(int arrayPosition){
+		String xpos= array[arrayPosition][0];
+		String ypos= array[arrayPosition][1];
+		String dir= array[arrayPosition][2];
+
+
+		Wraperclass wraperclass = new Wraperclass(xpos, ypos, dir);
+		return wraperclass;
+	}
 
 	// position: 0--> x position, 1 --> y position, 2--> direction
 	public String getFromFile(int arrayPosition, int position) {

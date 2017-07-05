@@ -1,3 +1,4 @@
+package Data;
 
 public class Wraperclass {
 	private int xposition;

@@ -1,6 +1,7 @@
 package Simulation;
 
 import java.awt.Color;
+import Data.Parser;
 
 import Zeichenfenster.MouseAndKeyListener;
 import Zeichenfenster.MyButton;
@@ -12,10 +13,14 @@ public class SimulationCalculator {
 	int[] map;
 	Rechteck[] buildings;
 	String[] settings;
-	private SimulationCalculator SimulationCalculator;
+	private Parser p;
 	
 	public SimulationCalculator(){
-		
+		int visits = p.getVisits();
+		if(visits == 0){
+			Help h = new Help();
+			h.startTutorial();
+		}
 	}
 	
 	public void enterMenu(){

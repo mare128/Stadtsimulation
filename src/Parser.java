@@ -12,7 +12,7 @@ private int lengthHouses;
 	public Parser(){
 lengthCars = 1000;
 widthCars = 3;
-lengthHouses= 2000;
+lengthHouses= 1056;
 		cars = new Cars(lengthCars, widthCars);
 		language= new Language(100, "german");
 		settings = new Settings(10);

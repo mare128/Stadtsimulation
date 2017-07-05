@@ -23,7 +23,7 @@ public class RechtecksPanel extends JPanel {
 	}
     public void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(color);
         g2d.fillRect(x, y, width, height);
+        g2d.setColor(color);
     }
 }

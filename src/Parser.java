@@ -1,27 +1,41 @@
 
 public class Parser {
 	// Zugriffsrechte?!?
-	protected Houses houses;
+	protected Buildings buildings;
 	protected Language language;
 	protected Cars cars;
 	protected Settings settings;
 private int lengthCars;
 private int widthCars;
-private int lengthHouses;
+private int lengthBuildings;
 	
 	public Parser(){
 lengthCars = 1000;
 widthCars = 3;
-lengthHouses= 1056;
+lengthBuildings= 1056;
 		cars = new Cars(lengthCars, widthCars);
 		language= new Language(100, "german");
 		settings = new Settings(10);
-		houses = new Houses(lengthHouses);
+		buildings = new Buildings(lengthBuildings);
 
 		
 		
 	}
+	public String[] loadLanguage(int number){
+		String[] array = language.loadSavedArray(number);
+		return array;
+	}
 	
+	public int getVisits(){
+		int number=settings.getVisits();
+		return number;
+	}
+	
+	public String[] loadMap(String size){
+		String[] array=buildings.loadMap(size);
+		return array;
+		
+	}
 	
 
 	

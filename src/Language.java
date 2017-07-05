@@ -1,33 +1,17 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Language extends File {
-	private String[] language;
-
-	
-	public Language(int length){
-		 language = new String[length];
-	}
-	
-@Override
-public String getFromFile(int position){
-	return language[position];
-}
-
-public void write(String content, int position){
-	language[position] = content;
-}
-
-public void createGerman(){
 	
 	
-}
-
-public void createEnglish(){
+public Language(int length, String name) {
+	super(length);
+	name = "language";
+	//loadSavedArray("german");
 	
 }
-
-
-
-public String[] getArrayLanguage(){
-	return language;
-}
+	
+	
+	
 }

@@ -6,14 +6,13 @@ public class Parser {
 	protected Cars cars;
 	protected Settings settings;
 private int lengthCars;
-private int widthCars;
 private int lengthBuildings;
 	
 	public Parser(){
 lengthCars = 1000;
-widthCars = 3;
+
 lengthBuildings= 1056;
-		cars = new Cars(lengthCars, widthCars);
+		cars = new Cars(lengthCars);
 		language= new Language(100, "german");
 		settings = new Settings(10);
 		buildings = new Buildings(lengthBuildings);
@@ -37,8 +36,23 @@ lengthBuildings= 1056;
 		
 	}
 	
+	public void writeBuildings(int position, String content) {
+		buildings.write(position, content);
+	}
+	
+	public void saveBuildings(int number) {
+		
+		buildings.saveArray(number);
+	}
+	
 
+	public String[] loadBuildings(int number) {
+		return buildings.loadSavedArray(number);
+	}
 	
-	
+	public void writeCars(int position, String direction, int xPosition, int yPosition) {
+	 cars.writeCars(position, direction, xPosition, yPosition);
+	}
+	public void saveCars
 
 }

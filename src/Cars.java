@@ -6,95 +6,148 @@ import java.io.IOException;
 
 
 public class Cars {
-	private String[][] array;
-	
+	private String[] direction;
 	private int lengthArray;
-	private int widthArray;
 	private String name;
-
-// numeration starts with 0
-	public Cars(int length, int width){
-		array = new String[length][width];
-		name = "cars";
+private 	int[] xpos;
+private int[] ypos;
 	
-lengthArray = length;
-widthArray = width;
+	
+	
+// numeration starts with 0
+	public Cars(int length){
+		direction = new String[length];
+		lengthArray = length;
+		name = "cars";
+		xpos = new int[length];
+		ypos = new int[length];
+	
+
+
 	}
-	public void writeCars(int arrayPosition, String xposition, String yposition, String direction) {
-		array[arrayPosition][0]= xposition;
-		array[arrayPosition][1]= yposition;
-		array[arrayPosition][2]= direction;
+	public void writeCars(int arrayPosition,String dir, int xposition, int yposition) {
+		direction[arrayPosition]= dir;
+		xpos[arrayPosition]= xposition;
+		ypos[arrayPosition]=yposition;
 
 	}
 	
 	public Wraperclass getCars(int arrayPosition){
-		String xpos= array[arrayPosition][0];
-		String ypos= array[arrayPosition][1];
-		String dir= array[arrayPosition][2];
-
-
-		Wraperclass wraperclass = new Wraperclass(xpos, ypos, dir);
+		Wraperclass wraperclass = new Wraperclass(direction[arrayPosition],xpos[arrayPosition], ypos[arrayPosition]);
 		return wraperclass;
 	}
 
 	// position: 0--> x position, 1 --> y position, 2--> direction
-	public String getFromFile(int arrayPosition, int position) {
-		return array[arrayPosition][position];
-		
-	}
 	
-	// position: 0--> x position, 1 --> y position, 2--> direction
-	public void write(int arrayPosition,int position,  String content) {
-		array[arrayPosition][position]= content;
-		
-	}
 	
-	public String[][] getArray(){
-		return array;
-	}
-	
-	public void saveArray(int number)
-    { String filename =name + number+ ".txt";
+	public void saveArray(int number) {
+     String filename =name + number+"direction"+ ".txt";
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
                         for (int p1 = 0; p1 < lengthArray; p1++) {
-                        	for (int p2 = 0; p2< widthArray; p2++)
-					if(p2!= widthArray&& p1!=lengthArray){
-                                   writer.write(array[p1][p2] + ";");}
-					else{writer.write(array[p1][p2]);}
+                        	
+					if( p1!=lengthArray){
+                                   writer.write(direction[p1]+ ";");}
+					else{writer.write(direction[p1]);}
                         			
         }writer.close();}
+        
         catch (IOException e) {
             e.printStackTrace();
         }
+        filename =name + number+"xpos"+ ".txt";
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+                        for (int p1 = 0; p1 < lengthArray; p1++) {
+                        	
+					if( p1!=lengthArray){
+                                   writer.write(xpos[p1]+ ";");}
+					else{writer.write(xpos[p1]);}
+                        			
+        }writer.close();}
+        
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        filename =name + number+"ypos"+ ".txt";
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+                        for (int p1 = 0; p1 < lengthArray; p1++) {
+                        	
+					if( p1!=lengthArray){
+                                   writer.write(ypos[p1]+ ";");}
+					else{writer.write(ypos[p1]);}
+                        			
+        }writer.close();}
+        
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        
     }
 	
-	public String[][] loadSavedArray(int number)
+	public WraperclassCars loadSavedArray(int number)
     {
-		String filename = name+ number+".txt";
+		String filename = name+ number+"direction"+".txt";
         BufferedReader reader;
-        int valuesArray;
-        valuesArray = 0;
-	String[] values= new String[(lengthArray*widthArray+1)];
+       
+	String[] values= new String[(lengthArray+1)];
         try {
             reader = new BufferedReader(new FileReader(filename));
             String line = reader.readLine();
             
             	 values = line.split(";");
-            	 while(line != null) {
+            	
                  
                                       for (int p1 = 0; p1 < (lengthArray); p1++) {
-                                      for(int p2 = 0; p2 < widthArray; p2++){
-                                    	  array[p1][p2]= values[valuesArray];
-                                    	  valuesArray++;
+                                    
+                                    	  direction[p1]= values[p1];
                                       }
-                                      }}             
+                                                 
                     reader.close();
-            return array;             
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-		return array;
+        
+        filename = name+ number+"xpos"+".txt";
+        try {
+            reader = new BufferedReader(new FileReader(filename));
+            String line = reader.readLine();
+            
+            	 values = line.split(";");
+            	
+                 
+                                      for (int p1 = 0; p1 < (lengthArray); p1++) {
+                                    
+                                    	  xpos[p1]=  Integer.parseInt(values[p1]);
+                                      }
+                                                 
+                    reader.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        filename = name+ number+"ypos"+".txt";
+        try {
+            reader = new BufferedReader(new FileReader(filename));
+            String line = reader.readLine();
+            
+            	 values = line.split(";");
+            	
+                 
+                                      for (int p1 = 0; p1 < (lengthArray); p1++) {
+                                    
+                                    	  ypos[p1]=  Integer.parseInt(values[p1]);
+                                      }
+                                                 
+                    reader.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        WraperclassCars wraperclass = new WraperclassCars(lengthArray, direction, xpos, ypos);
+	return wraperclass;
 }
 }

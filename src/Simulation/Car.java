@@ -1,5 +1,7 @@
 package Simulation;
 
+import java.awt.Color;
+
 import Zeichenfenster.MyFrame;
 import Zeichenfenster.Rechteck;
 
@@ -28,7 +30,7 @@ public class Car {
 		this.ID = ID;
 		this.destination = destination;
 		this.direction = direction;
-		Rechteck car = new Rechteck(MyFrame ,x, y, width, height, color);
+		Rechteck car = new Rechteck(MyFrame.getPanel() ,x, y, width, height, Color.white);
 	}
 	
 	public void drive(){

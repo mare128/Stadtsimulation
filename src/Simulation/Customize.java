@@ -2,17 +2,17 @@ package Simulation;
 
 public class Customize {
 
-	private int[] buildings;
+	private String[] buildings;
 	private SimulationCalculator SimulationCalculator;
 
 	public Customize(SimulationCalculator sc){
 		this.SimulationCalculator = sc;
-		buildings = new int[1200];
+		buildings = new String[1200];
 		buildings = SimulationCalculator.getMap();
 		
 	}
 	
-	public void changeFunction(int ID, int function){
+	public void changeFunction(int ID, String function){
 		buildings[ID]= function;
 	}
 }

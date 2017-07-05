@@ -2,12 +2,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Houses extends File {
+public class Buildings extends File {
 	
 	//small, medium, large or saved Map
-	public Houses(int length) {
+	public Buildings(int length) {
 		super(length);
-		name = "houses";
+		name = "buildings";
 		
 	}
 	

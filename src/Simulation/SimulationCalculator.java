@@ -15,8 +15,6 @@ public class SimulationCalculator {
 	private SimulationCalculator SimulationCalculator;
 	
 	public SimulationCalculator(){
-		MyFrame j = new MyFrame();
-		new MouseAndKeyListener(j);
 		
 	}
 	

@@ -7,7 +7,7 @@ public class Customize {
 
 	public Customize(SimulationCalculator sc){
 		this.SimulationCalculator = sc;
-		buildings = new int[2000];
+		buildings = new int[1200];
 		buildings = SimulationCalculator.getMap();
 		
 	}

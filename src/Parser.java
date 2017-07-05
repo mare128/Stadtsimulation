@@ -53,6 +53,14 @@ lengthBuildings= 1056;
 	public void writeCars(int position, String direction, int xPosition, int yPosition) {
 	 cars.writeCars(position, direction, xPosition, yPosition);
 	}
-	public void saveCars
+	public void saveCars(int number) {
+		
+		cars.saveArray(number);
+	}
+	
+	public WraperclassCars loadCars(int number) {
+		return cars.loadSavedArray(number);
+		
+	}
 
 }

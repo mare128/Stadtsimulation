@@ -31,6 +31,7 @@ lengthBuildings= 1056;
 		return number;
 	}
 	
+	// vorgefertigte Straßenkarte laden, die Größen sind small, medium und large
 	public String[] loadMap(String size){
 		String[] array=buildings.loadMap(size);
 		return array;
@@ -46,7 +47,7 @@ lengthBuildings= 1056;
 		buildings.saveArray(number);
 	}
 	
-
+// gespeicherte Karte laden; gleiche Nummer, unter der sie gespeichert wurde
 	public String[] loadBuildings(int number) {
 		return buildings.loadSavedArray(number);
 	}

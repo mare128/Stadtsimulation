@@ -33,10 +33,11 @@ public class Car {
 	}
 	
 	public void drive(){
-		
-		
-		
-		
+		if(destination >= ID){
+			if((destination % 48) >= (ID % 48)){
+				
+			}
+		}
 	}
 	
 	public void changeDestination(int destination){

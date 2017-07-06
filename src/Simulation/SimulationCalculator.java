@@ -43,6 +43,7 @@ public class SimulationCalculator {
 	
 	public void loadGame(){
 		//wie funktioniert dass genau mit dem laden von den Geb‰uden
+		//  vorgefertigte Straﬂenkarte laden mit loadMap, bereits gespeicherte Karte laden mit loadBuildings
 		map = p.loadBuildings(1056);
 	}
 	

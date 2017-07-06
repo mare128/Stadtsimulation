@@ -10,7 +10,6 @@ public class Car {
 	private int xPosition;
 	private int yPosition;
 	private int ID;
-	private int acceleration;
 	private int destination;
 	private int direction;
 	private int width;
@@ -35,6 +34,13 @@ public class Car {
 	
 	public void drive(){
 		
+		
+		
+		
+	}
+	
+	public void changeDestination(int destination){
+		this.destination = destination;
 	}
 	
 	

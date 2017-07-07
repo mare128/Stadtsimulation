@@ -42,12 +42,15 @@ public class SimulationCalculator {
 	}
 	
 	public void loadGame(){
-		//  vorgefertigte Straßenkarte laden mit loadMap, bereits gespeicherte Karte laden mit loadBuildings
+		//  vorgefertigte Straßenkarte (größe small, medium doer large) laden mit loadMap oder bereits gespeicherte Karte (d.h. jemad hat schon mal das Spiel gespielt und eine Stadt gespeichert) laden mit loadBuildings(nummer des speicherstands angeben)
+		// loadCars (gleicher Speicherstand wie bei Häusern angeben, nur beim Laden von gespeicherten Karten, vorgefertigte Karten haben keine Autos
+		
 		map = p.loadBuildings(1056);
 	}
 	
 	public void saveGame(){
-		
+		// saveBuildings und nummer des Speicherstands angeben(es gibt fünf verschiedene?)
+		// mit writeCars alle Autos in das Feld schreiben(Autos bitte durchnummerieren) und mit saveCars mit der gleichen Speicherstand-Nummer speichern
 		
 	}
 	

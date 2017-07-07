@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import Zeichenfenster.MyFrame;
+
 
 public class MyButton implements ActionListener{
 	
@@ -29,7 +29,7 @@ public class MyButton implements ActionListener{
         button.setVisible(true);
         button.addActionListener(this);
         button.setBackground(Color.white);
-        button.setForeground(Color.BLUE);
+        button.setForeground(Color.blue);
         p.add(button);
 	}
 	

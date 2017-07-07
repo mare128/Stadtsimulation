@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
-public class MyCanvas {
+public class MyCanvas{
 	
 	private int x;
 	private int y;
@@ -14,19 +14,15 @@ public class MyCanvas {
 	private Color color;
 	private Canvas c;
 	
-	public MyCanvas(JPanel p, int x, int y, int width, int height, Color color){
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
-		this.color = color;
+	public MyCanvas(JPanel p){
 		c = new Canvas();
-		c.setBounds(50, 60, 70, 80);
+		c.setBounds(0, 0, 100, 100);
 		p.add(c);
+		System.out.println("j");
 	}
 	
 	public void paint(Graphics g){
 		g.setColor(Color.black);
-		g.fillRect(50, 60, 70, 80);
+		g.fillRect(0, 0, 100, 100);
 	}
 }

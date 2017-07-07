@@ -6,8 +6,7 @@ import javax.swing.JPanel;
 
 public class MyFrame extends JFrame{
 	
-	private JPanel p;
-	private MyButton b;
+	protected JPanel p;
 
 	public MyFrame(Color color){
 		setTitle("Stadtsimulation");

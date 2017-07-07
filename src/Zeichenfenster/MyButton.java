@@ -18,11 +18,13 @@ public class MyButton implements ActionListener{
 	private String buttonName;
 	private boolean gameScreen;
 	private int gameScreens;
+	private boolean optionsScreen;
 
 	public MyButton(JPanel p, int x, int y, int width, int height, String buttonName){
 		this.buttonName = buttonName;
 		gameScreens = 0;
 		gameScreen = false;
+		optionsScreen = false;
 		button = new JButton(buttonName);
 		button.setSize(width, height);
         button.setLocation(x, y);
@@ -38,13 +40,16 @@ public class MyButton implements ActionListener{
         	gameScreen = true;
         	gameScreens = 1;
         	if(gameScreen == true && gameScreens == 1){
-    			MyFrame gameScreen = new MyFrame(Color.white);
+    			GameScreen gs = new GameScreen(Color.white);
     		}
-        }else{
+        }else if(e.getActionCommand().equals("Spiel starten")){
 			System.out.println("Only one Gamescreen is allowed!");
 		}
-        if(e.getActionCommand().equals("Optionen")){
+        if(e.getActionCommand().equals("Optionen") && optionsScreen == false){
+        	optionsScreen = true;
         	MyFrame optionsScreen = new MyFrame(Color.white);
+        }else if(e.getActionCommand().equals("Optionen")){
+        	System.out.println("Only one Optionsscreen is allowed!");
         }
         if(e.getActionCommand().equals("Beenden")){
             ImageIcon icon = new ImageIcon("bild.jpg");

@@ -1,17 +1,30 @@
 package Zeichenfenster;
 
 import java.awt.Color;
-
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class MyFrame extends JFrame{
+	
+	private JPanel p;
+	private MyButton b;
 
-	public MyFrame(){
+	public MyFrame(Color color){
 		setTitle("Stadtsimulation");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(1920, 1080);
-		setLocation(0, 0);
+		setBounds(0, 0, 1920, 1080);
+		setLayout(null);
 		setVisible(true);
-		setBackground(Color.gray);
+		setExtendedState(MAXIMIZED_BOTH);
+		p = new JPanel();
+		p.setSize(1920, 1080);
+		p.setLocation(0, 0);
+		p.setBackground(color);
+		p.setLayout(null);
+		add(p);
 	}	
+	
+	public JPanel getPanel(){
+		return p;
+	}
 }

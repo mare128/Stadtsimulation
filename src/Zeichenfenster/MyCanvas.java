@@ -18,7 +18,6 @@ public class MyCanvas{
 		c = new Canvas();
 		c.setBounds(0, 0, 100, 100);
 		p.add(c);
-		System.out.println("j");
 	}
 	
 	public void paint(Graphics g){

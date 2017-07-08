@@ -1,6 +1,7 @@
 package Starter;
 
 import Zeichenfenster.GameScreen;
+import Zeichenfenster.KreisPanel;
 import Zeichenfenster.OpeningScreen;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -16,7 +17,7 @@ public class Starter {
 	public static void main(String[] args) {
 		OpeningScreen os = new OpeningScreen(Color.white);
 		MyCanvas c = new MyCanvas(os.getPanel());
-		c.paint(null);
+		KreisPanel k = new KreisPanel(os.getPanel());
 		new MouseAndKeyListener(os);
 	}
 

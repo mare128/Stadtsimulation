@@ -47,7 +47,7 @@ public class MyButton implements ActionListener{
 		}
         if(e.getActionCommand().equals("Optionen") && optionsScreen == false){
         	optionsScreen = true;
-        	MyFrame optionsScreen = new MyFrame(Color.white);
+        	OptionsScreen opt = new OptionsScreen(Color.white);
         }else if(e.getActionCommand().equals("Optionen")){
         	System.out.println("Only one Optionsscreen is allowed!");
         }

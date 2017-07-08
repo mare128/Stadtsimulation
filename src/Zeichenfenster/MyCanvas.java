@@ -24,7 +24,4 @@ public class MyCanvas{
 		g.setColor(Color.black);
 		g.fillRect(0, 0, 100, 100);
 	}
-	public void test(){
-		
-	}
 }

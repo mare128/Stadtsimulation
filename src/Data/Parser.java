@@ -60,7 +60,7 @@ lengthBuildings= 1056;
 		cars.saveArray(number);
 	}
 	
-	public WraperclassCars loadCars(int number) {
+	public WrapperclassCars loadCars(int number) {
 		return cars.loadSavedArray(number);
 		
 	}

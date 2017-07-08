@@ -33,8 +33,8 @@ private int[] ypos;
 
 	}
 	
-	public Wraperclass getCars(int arrayPosition){
-		Wraperclass wraperclass = new Wraperclass(direction[arrayPosition],xpos[arrayPosition], ypos[arrayPosition]);
+	public Wrapperclass getCars(int arrayPosition){
+		Wrapperclass wraperclass = new Wrapperclass(direction[arrayPosition],xpos[arrayPosition], ypos[arrayPosition]);
 		return wraperclass;
 	}
 
@@ -87,7 +87,7 @@ private int[] ypos;
         
     }
 	
-	public WraperclassCars loadSavedArray(int number)
+	public WrapperclassCars loadSavedArray(int number)
     {
 		String filename = name+ number+"direction"+".txt";
         BufferedReader reader;
@@ -148,7 +148,7 @@ private int[] ypos;
         catch (IOException e) {
             e.printStackTrace();
         }
-        WraperclassCars wraperclass = new WraperclassCars(lengthArray, direction, xpos, ypos);
-	return wraperclass;
+        WrapperclassCars wrapperclass = new WrapperclassCars(lengthArray, direction, xpos, ypos);
+	return wrapperclass;
 }
 }

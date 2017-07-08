@@ -1,11 +1,11 @@
 package Data;
 
-public class Wraperclass {
+public class Wrapperclass {
 	private int xposition;
 	private int yposition;
 	private String direction;
 	
-	public Wraperclass(String dir,int xpos, int ypos){
+	public Wrapperclass(String dir,int xpos, int ypos){
 		xposition = xpos;
 		yposition = ypos;
 		direction = dir;

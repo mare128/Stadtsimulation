@@ -7,6 +7,7 @@ private int visits;
 	public Settings(int length){
 		super(length);
 		name = "settings";
+		loadSavedArray(0);
 		String numberOfVisits = array[0];
 		if(numberOfVisits.equals("0")){
 			visits = 0;

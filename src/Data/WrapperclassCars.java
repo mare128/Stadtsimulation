@@ -1,12 +1,12 @@
 package Data;
 
-public class WraperclassCars {
+public class WrapperclassCars {
 private String[] direction;
 private int xpos[];
 private int ypos[];
 
 
-public WraperclassCars(int length, String[] dirArray, int[] xArray, int[] yArray) {
+public WrapperclassCars(int length, String[] dirArray, int[] xArray, int[] yArray) {
 	direction = new String[length];
 	xpos = new int[length];
 	ypos = new int[length];

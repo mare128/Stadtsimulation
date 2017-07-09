@@ -41,13 +41,13 @@ public class MyButton implements ActionListener{
         	gameScreens = 1;
     			GameScreen gs = new GameScreen(Color.white);
         }else if(e.getActionCommand().equals("Spiel starten")){
-			System.out.println("Only one Gamescreen is allowed!");
+			System.out.println("Nur ein Spiel gleichzeitig");
 		}
         else if(e.getActionCommand().equals("Optionen") && optionsScreen == false){
         	optionsScreen = true;
         	OptionsScreen opt = new OptionsScreen(Color.white);
         }else if(e.getActionCommand().equals("Optionen")){
-        	System.out.println("Only one Optionsscreen is allowed!");
+        	System.out.println("Nur ein Optionenmenü gleichzeitig");
         }
         else if(e.getActionCommand().equals("Beenden")){
             ImageIcon icon = new ImageIcon("bild.jpg");

@@ -16,15 +16,9 @@ public class MyButton implements ActionListener{
 	
 	private JButton button;
 	private String buttonName;
-	private boolean gameScreen;
-	private int gameScreens;
-	private boolean optionsScreen;
-
+	
 	public MyButton(JPanel p, int x, int y, int width, int height, String buttonName){
 		this.buttonName = buttonName;
-		gameScreens = 0;
-		gameScreen = false;
-		optionsScreen = false;
 		button = new JButton(buttonName);
 		button.setSize(width, height);
         button.setLocation(x, y);
@@ -36,35 +30,19 @@ public class MyButton implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-        if(e.getActionCommand().equals("Spiel starten") && gameScreens == 0){
-        	gameScreen = true;
-        	gameScreens = 1;
-    			GameScreen gs = new GameScreen(Color.white);
-        }else if(e.getActionCommand().equals("Spiel starten")){
-			System.out.println("Nur ein Spiel gleichzeitig");
+        if(e.getActionCommand().equals("Spiel starten")){
+    		GameScreen gs = new GameScreen(Color.white);
 		}
-        else if(e.getActionCommand().equals("Optionen") && optionsScreen == false){
-        	optionsScreen = true;
-        	OptionsScreen opt = new OptionsScreen(Color.white);
-        }else if(e.getActionCommand().equals("Optionen")){
-        	System.out.println("Nur ein Optionenmenü gleichzeitig");
-        }
         else if(e.getActionCommand().equals("Beenden")){
             ImageIcon icon = new ImageIcon("bild.jpg");
-            int antwort = JOptionPane.showConfirmDialog(null, "Wirklich schließen?", "Meldung", JOptionPane.YES_NO_CANCEL_OPTION,
+            int antwort = JOptionPane.showConfirmDialog(null, "Wirklich schließen?", "Meldung", JOptionPane.YES_NO_OPTION,
             JOptionPane.INFORMATION_MESSAGE, icon);
 
             if (antwort == JOptionPane.OK_OPTION) {
                 System.exit(0);
             } else if (antwort == JOptionPane.NO_OPTION) {
-            } else if (antwort == JOptionPane.CANCEL_OPTION) {
             } else if (antwort == JOptionPane.CLOSED_OPTION) {
-                System.out.println("Fenster geschlossen!");
             } 
         }
-	}
-	
-	public boolean gameScreen(){
-		return gameScreen;
 	}
 }

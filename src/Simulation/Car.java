@@ -1,8 +1,10 @@
 package Simulation;
 
 import java.awt.Color;
-import eps.fortgeschritteneGrafik.Rechteck;
 
+import javax.swing.JPanel;
+
+import Zeichenfenster.MyCanvas;
 import Zeichenfenster.MyFrame;
 
 public class Car {
@@ -16,7 +18,7 @@ public class Car {
 	private int height;
 	private MyFrame MyFrame;
 	
-	public Car(int x, int y, int ID, int destination, int direction){
+	public Car(JPanel p,int x, int y, int ID, int destination, int direction){
 		if(direction == 0){
 			width = 15;
 			height = 6;
@@ -29,7 +31,7 @@ public class Car {
 		this.ID = ID;
 		this.destination = destination;
 		this.direction = direction;
-		Rechteck car = new Rechteck(MyFrame.getPanel() ,x, y, width, height, Color.white);
+		MyCanvas car = new MyCanvas(MyFrame.getPanel() ,x, y, width, height, Color.white);
 	}
 	
 	public void drive(){
@@ -42,6 +44,34 @@ public class Car {
 	
 	public void changeDestination(int destination){
 		this.destination = destination;
+	}
+
+	public int getxPosition() {
+		return xPosition;
+	}
+
+	public void setxPosition(int xPosition) {
+		this.xPosition = xPosition;
+	}
+
+	public int getyPosition() {
+		return yPosition;
+	}
+
+	public void setyPosition(int yPosition) {
+		this.yPosition = yPosition;
+	}
+
+	public int getDestination() {
+		return destination;
+	}
+
+	public int getDirection() {
+		return direction;
+	}
+
+	public void setDirection(int direction) {
+		this.direction = direction;
 	}
 	
 	

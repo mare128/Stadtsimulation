@@ -1,7 +1,7 @@
 package Simulation;
 
+import java.awt.Canvas;
 import java.awt.Color;
-import eps.fortgeschritteneGrafik.Rechteck;
 import Data.Parser;
 import Zeichenfenster.MouseAndKeyListener;
 import Zeichenfenster.MyButton;
@@ -18,25 +18,19 @@ import Zeichenfenster.MyCanvas;
 public class SimulationCalculator {
 
 	private String[] map;
-	private Rechteck[] buildings;
+	private MyCanvas[] buildings;
 	private String[] settings;
 	private Parser p;
 	private SimulationCalculator sc;
 	
 	public SimulationCalculator(){
 		OpeningScreen os = new OpeningScreen(Color.white);
-		MyCanvas c = new MyCanvas(os.getPanel());
-		KreisPanel k = new KreisPanel(os.getPanel());
 		new MouseAndKeyListener(os);
 		int x = 0;
 		int y = 50;
 		for(int i = 0; i < 22; i++){
 			for(int z = 0; z < 48; z++){
-				Rechteck r = new Rechteck();
-				r.positionSetzen(x + (z * 40),y + (i * 40));
-				r.farbeSetzen("weiss");
-				r.groesseSetzen(40, 40);
-				
+				buildings[z + (i * 48)] = new MyCanvas(os.getPanel(),x + (z * 40),y + (i * 40),40, 40, Color.WHITE);
 			}
 		}
 		int visits = p.getVisits();

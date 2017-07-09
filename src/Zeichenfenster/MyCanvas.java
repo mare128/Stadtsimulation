@@ -14,9 +14,15 @@ public class MyCanvas{
 	private Color color;
 	private Canvas c;
 	
-	public MyCanvas(JPanel p){
+	public MyCanvas(JPanel p,int x, int y, int width, int height, Color color){
+		this.color = color;
+		this.height = height;
+		this.width = width;
+		this.x = x;
+		this.y = y;
 		c = new Canvas();
-		c.setBounds(0, 0, 100, 100);
+		c.setBounds(x, y, width, height);
+		c.setBackground(color);
 		p.add(c);
 	}
 	
@@ -24,4 +30,14 @@ public class MyCanvas{
 		g.setColor(Color.black);
 		g.fillRect(0, 0, 100, 100);
 	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+	
+	
 }

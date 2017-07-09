@@ -1,24 +1,14 @@
 package Starter;
 
-import Zeichenfenster.GameScreen;
-import Zeichenfenster.KreisPanel;
-import Zeichenfenster.OpeningScreen;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-
-import javax.swing.JPanel;
-
-import Zeichenfenster.MouseAndKeyListener;
-import Zeichenfenster.MyButton;
-import Zeichenfenster.MyCanvas;
+import Simulation.SimulationCalculator;
 
 public class Starter {
 	
+	private SimulationCalculator sc;
+	
 	public static void main(String[] args) {
-		OpeningScreen os = new OpeningScreen(Color.white);
-		MyCanvas c = new MyCanvas(os.getPanel());
-		KreisPanel k = new KreisPanel(os.getPanel());
-		new MouseAndKeyListener(os);
+		SimulationCalculator sc = new SimulationCalculator();
+		sc.startSimulation();
 	}
 
 }

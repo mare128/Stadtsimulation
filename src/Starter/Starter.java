@@ -17,7 +17,6 @@ public class Starter {
 	public static void main(String[] args) {
 		OpeningScreen os = new OpeningScreen(Color.white);
 		MyCanvas c = new MyCanvas(os.getPanel());
-		KreisPanel k = new KreisPanel(os.getPanel());
 		new MouseAndKeyListener(os);
 	}
 

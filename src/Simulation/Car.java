@@ -74,5 +74,4 @@ public class Car {
 		this.direction = direction;
 	}
 	
-	
 }

@@ -1,12 +1,19 @@
 package Simulation;
 
 import java.awt.Color;
+import eps.fortgeschritteneGrafik.Rechteck;
 import Data.Parser;
-
 import Zeichenfenster.MouseAndKeyListener;
 import Zeichenfenster.MyButton;
 import Zeichenfenster.MyFrame;
-import Zeichenfenster.Rechteck;
+import Zeichenfenster.GameScreen;
+import Zeichenfenster.KreisPanel;
+import Zeichenfenster.OpeningScreen;
+import java.awt.event.ActionEvent;
+import javax.swing.JPanel;
+import Zeichenfenster.MouseAndKeyListener;
+import Zeichenfenster.MyButton;
+import Zeichenfenster.MyCanvas;
 
 public class SimulationCalculator {
 
@@ -17,13 +24,19 @@ public class SimulationCalculator {
 	private SimulationCalculator sc;
 	
 	public SimulationCalculator(){
-		MyFrame j = new MyFrame(Color.white);		
-		new MouseAndKeyListener(j);
+		OpeningScreen os = new OpeningScreen(Color.white);
+		MyCanvas c = new MyCanvas(os.getPanel());
+		KreisPanel k = new KreisPanel(os.getPanel());
+		new MouseAndKeyListener(os);
 		int x = 0;
 		int y = 50;
 		for(int i = 0; i < 22; i++){
 			for(int z = 0; z < 48; z++){
-				new Rechteck(j.getPanel(), x + (z * 40), y + (i * 40), 40, 40, Color.white);
+				Rechteck r = new Rechteck();
+				r.positionSetzen(x + (z * 40),y + (i * 40));
+				r.farbeSetzen("weiss");
+				r.groesseSetzen(40, 40);
+				
 			}
 		}
 		int visits = p.getVisits();
@@ -37,8 +50,7 @@ public class SimulationCalculator {
 	}
 	
 	public void enterMenu(){
-		//SIlvano
-		//Muss sich dann auch mit Knopfdruck wieder schließen
+		
 	}
 	
 	public void loadGame(){
@@ -61,5 +73,9 @@ public class SimulationCalculator {
 	
 	public String[] getMap(){ 
 		return map;
+	}
+	
+	public void startSimulation(){
+		
 	}
 }

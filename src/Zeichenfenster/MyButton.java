@@ -33,7 +33,7 @@ public class MyButton implements ActionListener{
         if(e.getActionCommand().equals("Spiel starten")){
     		GameScreen gs = new GameScreen(Color.white);
 		}
-        if(e.getActionCommand().equals("Beenden")){
+        else if(e.getActionCommand().equals("Beenden")){
             ImageIcon icon = new ImageIcon("bild.jpg");
             int antwort = JOptionPane.showConfirmDialog(null, "Wirklich schlieﬂen?", "Meldung", JOptionPane.YES_NO_OPTION,
             JOptionPane.INFORMATION_MESSAGE, icon);

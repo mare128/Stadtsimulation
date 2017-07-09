@@ -39,8 +39,8 @@ public class MyMenu {
 		menu.setMnemonic(KeyEvent.VK_A);
 		menuBar.add(menu);
 		//a group of JMenuItems
-		menuItem = new JMenuItem("Get Help!", KeyEvent.VK_T);
-		menuItem.setActionCommand("Get Help");
+		menuItem = new JMenuItem("Hilfe erhalten!", KeyEvent.VK_T);
+		menuItem.setActionCommand("Hilfe erhalten");
 		menuItem.setMnemonic(KeyEvent.VK_B);
 		menu.add(menuItem);
 		menu = new JMenu("Options");

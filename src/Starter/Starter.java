@@ -1,6 +1,11 @@
 package Starter;
 
+import java.awt.Color;
+
 import Simulation.SimulationCalculator;
+import Zeichenfenster.MouseAndKeyListener;
+import Zeichenfenster.MyCanvas;
+import Zeichenfenster.OpeningScreen;
 
 public class Starter {
 	

@@ -1,9 +1,9 @@
 package Simulation;
 
 import java.awt.Color;
+import eps.fortgeschritteneGrafik.Rechteck;
 
 import Zeichenfenster.MyFrame;
-import Zeichenfenster.Rechteck;
 
 public class Car {
 

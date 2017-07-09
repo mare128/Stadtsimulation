@@ -62,4 +62,8 @@ public class SimulationCalculator {
 	public String[] getMap(){ 
 		return map;
 	}
+	
+	public void startSimulation(){
+		
+	}
 }

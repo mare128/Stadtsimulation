@@ -39,19 +39,17 @@ public class MyButton implements ActionListener{
         if(e.getActionCommand().equals("Spiel starten") && gameScreens == 0){
         	gameScreen = true;
         	gameScreens = 1;
-        	if(gameScreen == true && gameScreens == 1){
     			GameScreen gs = new GameScreen(Color.white);
-    		}
         }else if(e.getActionCommand().equals("Spiel starten")){
 			System.out.println("Only one Gamescreen is allowed!");
 		}
-        if(e.getActionCommand().equals("Optionen") && optionsScreen == false){
+        else if(e.getActionCommand().equals("Optionen") && optionsScreen == false){
         	optionsScreen = true;
         	OptionsScreen opt = new OptionsScreen(Color.white);
         }else if(e.getActionCommand().equals("Optionen")){
         	System.out.println("Only one Optionsscreen is allowed!");
         }
-        if(e.getActionCommand().equals("Beenden")){
+        else if(e.getActionCommand().equals("Beenden")){
             ImageIcon icon = new ImageIcon("bild.jpg");
             int antwort = JOptionPane.showConfirmDialog(null, "Wirklich schlieﬂen?", "Meldung", JOptionPane.YES_NO_CANCEL_OPTION,
             JOptionPane.INFORMATION_MESSAGE, icon);

@@ -28,7 +28,7 @@ public class MyCanvas{
 	
 	public void paint(Graphics g){
 		g.setColor(Color.black);
-		g.fillRect(0, 0, 100, 100);
+		g.fillRect(x, y, width, height);
 	}
 
 	public int getX() {

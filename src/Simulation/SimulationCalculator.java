@@ -7,7 +7,6 @@ import Zeichenfenster.MouseAndKeyListener;
 import Zeichenfenster.MyButton;
 import Zeichenfenster.MyFrame;
 import Zeichenfenster.GameScreen;
-import Zeichenfenster.KreisPanel;
 import Zeichenfenster.OpeningScreen;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;

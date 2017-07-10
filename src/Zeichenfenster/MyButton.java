@@ -10,14 +10,18 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import Simulation.SimulationCalculator;
+
 
 
 public class MyButton implements ActionListener{
 	
 	private JButton button;
 	private String buttonName;
+	private GameScreen gs;
+	private SimulationCalculator sc;
 	
-	public MyButton(JPanel p, int x, int y, int width, int height, String buttonName){
+	public MyButton(JPanel p, int x, int y, int width, int height, String buttonName,SimulationCalculator sc){
 		this.buttonName = buttonName;
 		button = new JButton(buttonName);
 		button.setSize(width, height);
@@ -31,17 +35,18 @@ public class MyButton implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("Spiel starten")){
-    		GameScreen gs = new GameScreen(Color.white);
+    		gs = new GameScreen(Color.white);
+    		sc.pushGameScreen(gs);
 		}
         else if(e.getActionCommand().equals("Beenden")){
             ImageIcon icon = new ImageIcon("bild.jpg");
-            int antwort = JOptionPane.showConfirmDialog(null, "Wirklich schlieﬂen?", "Meldung", JOptionPane.YES_NO_OPTION,
+            int answer = JOptionPane.showConfirmDialog(null, "Wirklich schlieﬂen?", "Meldung", JOptionPane.YES_NO_OPTION,
             JOptionPane.INFORMATION_MESSAGE, icon);
 
-            if (antwort == JOptionPane.OK_OPTION) {
+            if (answer == JOptionPane.OK_OPTION) {
                 System.exit(0);
-            } else if (antwort == JOptionPane.NO_OPTION) {
-            } else if (antwort == JOptionPane.CLOSED_OPTION) {
+            } else if (answer == JOptionPane.NO_OPTION) {
+            } else if (answer == JOptionPane.CLOSED_OPTION) {
             } 
         }
 	}

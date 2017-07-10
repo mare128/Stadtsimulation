@@ -3,16 +3,20 @@ package Simulation;
 public class Help {
 
 	private SimulationCalculator sc;
+	private Customize customize;
+	private String[] map;
 	
-	public Help(SimulationCalculator sim){
-		sc=sim;
+	public Help(SimulationCalculator sc, Customize customize){
+		this.sc =sc;
+		this.customize = customize;
 	}
 	
 	public void startTutorial(){
-		sc.enterMenu();
-		//menü öffnen also halt oben in dieser zeile so wie dus machen wolltest und dann brauchen wir halt dass die verschiedenen Menüfunktionen da sind = enterMenu() Methode schreiben
-		//dann brauch ich ein Textfeld in einem Zeichenfenster daneben und 2 Knöpfe in die ich was schreiben kann
-		//im menü brauch ich dann die Rückgabe welche Mapgröße gewählt wurde
+		//Hier sollte mir nach einer kurzen Einweisung eine Mapgröße zurückgegeben werden. Das Tutorial entfällt, da man auf Grund fehlendem MVC-Modells weder fortfahren kann, noch
+		//eine Mapgröße und die gewünschte Belegung der Häuser zurückgeben kann. Ich werde hier einfach eine eigene Belegung erstellen(nur als Beispiel).
+		map = sc.getMap();
+		//hier sollte der Benutzer jetzt die Belegung für jedes Gebäude festlegen können(z.B. Wohnhaus oder Polizeiwache). Ich werde das jetzt manuel machen.
+		
 	}
 	
 	public void endTutorial(){

@@ -2,18 +2,14 @@ package Zeichenfenster;
 
 import java.awt.Color;
 
-import com.sun.imageio.stream.StreamCloser.CloseAction;
+import Simulation.SimulationCalculator;
 
 public class OpeningScreen extends MyFrame{
 
-	private MyButton b1;
-	private MyButton b2;
-	private MyButton b3;
-	
-	public OpeningScreen(Color color){
+	public OpeningScreen(Color color, SimulationCalculator sc){
 		super(color);
-		b1 = new MyButton(p, 810, 480, 300, 50, "Spiel starten");
-		b2 = new MyButton(p, 810, 550, 300, 50, "Beenden");
+		MyButton b1 = new MyButton(p, 810, 480, 300, 50, "Spiel starten",sc);
+		MyButton b2 = new MyButton(p, 810, 550, 300, 50, "Beenden",sc);
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 	}
 }

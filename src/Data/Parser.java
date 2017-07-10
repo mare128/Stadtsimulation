@@ -6,13 +6,12 @@ public class Parser {
 	protected Language language;
 	protected Cars cars;
 	protected Settings settings;
-private int lengthCars;
-private int lengthBuildings;
+	private int lengthCars;
+	private int lengthBuildings;
 	
 	public Parser(){
-lengthCars = 1000;
-
-lengthBuildings= 1056;
+		lengthCars = 1000;
+		lengthBuildings= 1056;
 		cars = new Cars(lengthCars);
 		language= new Language(100, "german");
 		settings = new Settings(10);
@@ -31,11 +30,9 @@ lengthBuildings= 1056;
 		return number;
 	}
 	
-	// vorgefertigte Straßenkarte laden, die Größen sind small, medium und large
 	public String[] loadMap(String size){
 		String[] array=buildings.loadMap(size);
 		return array;
-		
 	}
 	
 	public void writeBuildings(int position, String content) {
@@ -47,13 +44,12 @@ lengthBuildings= 1056;
 		buildings.saveArray(number);
 	}
 	
-// gespeicherte Karte laden; gleiche Nummer, unter der sie gespeichert wurde
 	public String[] loadBuildings(int number) {
 		return buildings.loadSavedArray(number);
 	}
 	
-	public void writeCars(int position, String direction, int xPosition, int yPosition) {
-	 cars.writeCars(position, direction, xPosition, yPosition);
+	public void writeCars(int position, int direction,int destination, int xPosition, int yPosition) {
+	 cars.writeCars(position, direction,destination, xPosition, yPosition);
 	}
 	public void saveCars(int number) {
 		

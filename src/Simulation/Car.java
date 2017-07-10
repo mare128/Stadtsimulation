@@ -17,8 +17,11 @@ public class Car {
 	private int width;
 	private int height;
 	private MyFrame MyFrame;
+	private String[] map;
+	private SimulationCalculator sc;
+	private MyCanvas car;
 	
-	public Car(JPanel p,int x, int y, int ID, int destination, int direction){
+	public Car(SimulationCalculator sc,JPanel p,int x, int y, int ID, int destination, int direction){
 		if(direction == 0){
 			width = 15;
 			height = 6;
@@ -31,15 +34,70 @@ public class Car {
 		this.ID = ID;
 		this.destination = destination;
 		this.direction = direction;
-		MyCanvas car = new MyCanvas(MyFrame.getPanel() ,x, y, width, height, Color.white);
+		car = new MyCanvas(MyFrame.getPanel() ,x, y, width, height, Color.white);		
+		this.sc = sc;
+		map = sc.getMap();
 	}
 	
 	public void drive(){
-		if(destination >= ID){
+		if(destination > ID){
 			if((destination % 48) >= (ID % 48)){
-				
+				if(map[ID + 48].equals("street")){
+					yPosition += 2;
+					car.moveY(yPosition);
+				} else if(map[ID + 1].equals("street")){
+					xPosition += 2;
+					car.moveX(xPosition);
+				} else if(map[ID - 48].equals("street")){
+					yPosition -= 2;
+					car.moveY(yPosition);
+				} else {
+					xPosition -= 2;
+					car.moveX(xPosition);
+				}
+			} else if(map[ID + 48].equals("street")){
+				yPosition += 2;
+				car.moveY(yPosition);
+			} else if(map[ID + 1].equals("street")){
+				xPosition -= 2;
+				car.moveX(xPosition);
+			} else if(map[ID - 48].equals("street")){
+				yPosition -= 2;
+				car.moveY(yPosition);
+			} else {
+				xPosition += 2;
+				car.moveX(xPosition);
 			}
-		}
+			}
+		else{
+			if((destination % 48) >= (ID % 48)){
+				if(map[ID + 48].equals("street")){
+					yPosition -= 2;
+					car.moveY(yPosition);
+				} else if(map[ID + 1].equals("street")){
+					xPosition += 2;
+					car.moveX(xPosition);
+				} else if(map[ID - 48].equals("street")){
+					yPosition += 2;
+					car.moveY(yPosition);
+				} else {
+					xPosition -= 2;
+					car.moveX(xPosition);
+				}
+			} else if(map[ID + 48].equals("street")){
+				yPosition -= 2;
+				car.moveY(yPosition);
+			} else if(map[ID + 1].equals("street")){
+				xPosition -= 2;
+				car.moveX(xPosition);
+			} else if(map[ID - 48].equals("street")){
+				yPosition += 2;
+				car.moveY(yPosition);
+			} else {
+				xPosition += 2;
+				car.moveX(xPosition);
+			}			
+		}	
 	}
 	
 	public void changeDestination(int destination){

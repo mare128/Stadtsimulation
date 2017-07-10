@@ -5,36 +5,33 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 public class Cars {
-	private String[] direction;
+	private int[] direction;
+	private int[] destination;
 	private int lengthArray;
 	private String name;
-private 	int[] xpos;
-private int[] ypos;
+	private int[] xpos;
+	private int[] ypos;
 	
-	
-	
-// numeration starts with 0
 	public Cars(int length){
-		direction = new String[length];
+		direction = new int[length];
+		destination = new int[length];
 		lengthArray = length;
 		name = "cars";
 		xpos = new int[length];
 		ypos = new int[length];
-	
-
 
 	}
-	public void writeCars(int arrayPosition,String dir, int xposition, int yposition) {
+	public void writeCars(int arrayPosition,int dir,int dest, int xPosition, int yPosition) {
 		direction[arrayPosition]= dir;
-		xpos[arrayPosition]= xposition;
-		ypos[arrayPosition]=yposition;
+		xpos[arrayPosition]= xPosition;
+		ypos[arrayPosition]=yPosition;
+		destination[arrayPosition] = dest;
 
 	}
 	
 	public Wrapperclass getCars(int arrayPosition){
-		Wrapperclass wraperclass = new Wrapperclass(direction[arrayPosition],xpos[arrayPosition], ypos[arrayPosition]);
+		Wrapperclass wraperclass = new Wrapperclass(direction[arrayPosition],destination[arrayPosition],xpos[arrayPosition], ypos[arrayPosition]);
 		return wraperclass;
 	}
 
@@ -89,7 +86,7 @@ private int[] ypos;
 	
 	public WrapperclassCars loadSavedArray(int number)
     {
-		String filename = name+ number+"direction"+".txt";
+		String filename = name+ number+direction+".txt";
         BufferedReader reader;
        
 	String[] values= new String[(lengthArray+1)];
@@ -98,11 +95,12 @@ private int[] ypos;
             String line = reader.readLine();
             
             	 values = line.split(";");
+            	 direction.toString();
             	
                  
                                       for (int p1 = 0; p1 < (lengthArray); p1++) {
                                     
-                                    	  direction[p1]= values[p1];
+                                    	  direction[p1] = Integer.parseInt(values[p1]);
                                       }
                                                  
                     reader.close();
@@ -148,7 +146,7 @@ private int[] ypos;
         catch (IOException e) {
             e.printStackTrace();
         }
-        WrapperclassCars wrapperclass = new WrapperclassCars(lengthArray, direction, xpos, ypos);
+        WrapperclassCars wrapperclass = new WrapperclassCars(lengthArray, direction,destination, xpos, ypos);
 	return wrapperclass;
 }
 }

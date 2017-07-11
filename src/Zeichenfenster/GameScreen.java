@@ -9,4 +9,8 @@ public class GameScreen extends MyFrame{
 		super(color);
 		MyMenu m = new MyMenu(p);
 	}
+	
+	public void paint(){
+		paintAll(getGraphics());
+	}
 }

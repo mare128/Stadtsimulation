@@ -13,9 +13,9 @@ public class Help {
 	
 	public void startTutorial(){
 		//Hier sollte mir nach einer kurzen Einweisung eine Mapgröße zurückgegeben werden. Das Tutorial entfällt, da man auf Grund fehlendem MVC-Modells weder fortfahren kann, noch
-		//eine Mapgröße und die gewünschte Belegung der Häuser zurückgeben kann. Ich werde hier einfach eine eigene Belegung erstellen(nur als Beispiel).
+		//eine Mapgröße und die gewünschte Belegung der Häuser zurückgeben kann.
 		map = sc.getMap();
-		//hier sollte der Benutzer jetzt die Belegung für jedes Gebäude festlegen können(z.B. Wohnhaus oder Polizeiwache). Ich werde das jetzt manuel machen.
+		//hier sollte der Benutzer jetzt die Belegung für jedes Gebäude festlegen können(z.B. Wohnhaus oder Polizeiwache).
 		
 	}
 	

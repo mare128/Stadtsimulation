@@ -20,9 +20,11 @@ public class MyButton implements ActionListener{
 	private String buttonName;
 	private GameScreen gs;
 	private SimulationCalculator sc;
+	private boolean newGameScreen;
 	
 	public MyButton(JPanel p, int x, int y, int width, int height, String buttonName,SimulationCalculator sc){
 		this.buttonName = buttonName;
+		newGameScreen = true;
 		button = new JButton(buttonName);
 		button.setSize(width, height);
         button.setLocation(x, y);
@@ -35,8 +37,8 @@ public class MyButton implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("Spiel starten")){
-    		gs = new GameScreen(Color.white);
     		sc.pushGameScreen(gs);
+    		newGameScreen = true;
 		}
         else if(e.getActionCommand().equals("Beenden")){
             ImageIcon icon = new ImageIcon("bild.jpg");
@@ -49,5 +51,10 @@ public class MyButton implements ActionListener{
             } else if (answer == JOptionPane.CLOSED_OPTION) {
             } 
         }
+	}
+	
+	
+	public boolean newGameScreen(){
+		return newGameScreen;
 	}
 }

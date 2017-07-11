@@ -54,4 +54,8 @@ public class MyCanvas{
 	public void logIn(){
 		c.setVisible(true);
 	}
+	
+	public void newCanvas(JPanel p, int x, int y, int width, int height, Color color){
+		MyCanvas c = new MyCanvas(p, x, y, width, height, color);
+	}
 }

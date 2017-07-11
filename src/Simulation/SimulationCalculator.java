@@ -1,6 +1,8 @@
 package Simulation;
 
 import java.awt.Color;
+import java.util.Random;
+
 import Data.Parser;
 import Data.WrapperclassCars;
 import Zeichenfenster.MouseAndKeyListener;
@@ -18,6 +20,7 @@ public class SimulationCalculator {
 	private Customize customize;
 	private Car[] car;
 	private WrapperclassCars cars;
+	private int amountOfBuildings;
 	
 	public SimulationCalculator(){
 		OpeningScreen os = new OpeningScreen(Color.white, sc);
@@ -31,11 +34,14 @@ public class SimulationCalculator {
 		}
 		new MouseAndKeyListener(gs);
 		gs.paint();
+		/*
+		Hier sollte beim ersten Start, dass Tutorial aufgerufen werden. Hier ausgeklammert.
 		int visits = p.getVisits();
 		if(visits == 0){
 			Help h = new Help(sc,customize);
 			h.startTutorial();
 		}
+		*/
 	}
 	
 	public void loadGame(){
@@ -60,18 +66,37 @@ public class SimulationCalculator {
 		p.saveCars(1);
 	}
 	
-	public void cancelGame(){
-		
-		
-	}
-	
 	public String[] getMap(){ 
 		map = p.loadMap("medium");
+		//Setzen der Anzahl der Gebäude fällt weg
+		amountOfBuildings = 901;
 		return map;
 	}
 	
 	public void startSimulation(){
+		simulateCars();
 		
+	}
+	
+	private void simulateCars(){
+		for(int i = 0; i < car.length; i++){
+			Random rd = new Random();
+			int j = rd.nextInt(100);
+			if(j == 0){
+				int dest = rd.nextInt(amountOfBuildings + 1);
+				dest = convertBuildingID(dest);
+				car[i].drive();
+			}
+			}
+	}
+	
+	private int convertBuildingID(int dest){
+		switch(amountOfBuildings){
+		case 1055 : break;
+		case 901: dest = (dest % 38) + (48* (dest / 38)); 
+		case 747: dest = (dest % 28) + (48* (dest / 28)); 
+		}
+		return dest;
 	}
 	
 	public void pushGameScreen(GameScreen gs){

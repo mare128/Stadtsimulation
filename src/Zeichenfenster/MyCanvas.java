@@ -46,4 +46,12 @@ public class MyCanvas{
 	public void moveY(int y){
 		this.y = y;
 	}
+	
+	public void logOut(){
+		c.setVisible(false);;
+	}
+	
+	public void logIn(){
+		c.setVisible(true);
+	}
 }

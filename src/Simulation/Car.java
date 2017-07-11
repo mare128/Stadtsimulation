@@ -20,9 +20,10 @@ public class Car {
 	private String[] map;
 	private SimulationCalculator sc;
 	private MyCanvas car;
+	private boolean visible;
 	
 	public Car(SimulationCalculator sc,JPanel p,int x, int y, int ID, int destination, int direction){
-		if(direction == 0){
+		if(direction == 0 || direction == 2 || direction == 4){
 			width = 15;
 			height = 6;
 		} else{
@@ -37,67 +38,87 @@ public class Car {
 		car = new MyCanvas(MyFrame.getPanel() ,x, y, width, height, Color.white);		
 		this.sc = sc;
 		map = sc.getMap();
+		visible = true;
 	}
 	
 	public void drive(){
-		if(destination > ID){
-			if((destination % 48) >= (ID % 48)){
-				if(map[ID + 48].equals("street")){
-					yPosition += 2;
-					car.moveY(yPosition);
-				} else if(map[ID + 1].equals("street")){
-					xPosition += 2;
-					car.moveX(xPosition);
-				} else if(map[ID - 48].equals("street")){
-					yPosition -= 2;
-					car.moveY(yPosition);
-				} else {
-					xPosition -= 2;
-					car.moveX(xPosition);
-				}
-			} else if(map[ID + 48].equals("street")){
-				yPosition += 2;
-				car.moveY(yPosition);
-			} else if(map[ID + 1].equals("street")){
-				xPosition -= 2;
-				car.moveX(xPosition);
-			} else if(map[ID - 48].equals("street")){
-				yPosition -= 2;
-				car.moveY(yPosition);
-			} else {
-				xPosition += 2;
-				car.moveX(xPosition);
+		if(visible = true){
+			int position = (( xPosition % 40 ) + ( 48 * ((yPosition - 90) % 40 )));
+			boolean destinationReached = false;
+			switch(direction){
+			case 0 : if(destination == position + 48 || destination == position - 48); destinationReached = true; break;
+			case 1 : if(destination == position + 1 || destination == position - 1); destinationReached = true; break;
+			case 2 : if(destination == position + 48); destinationReached = true; break;
+			case 3 : if(destination == position + 1); destinationReached = true; break;
+			case 4 : if(destination == position - 48); destinationReached = true; break;
+			case 5 : if(destination == position - 1); destinationReached = true; break;
 			}
-			}
-		else{
-			if((destination % 48) >= (ID % 48)){
-				if(map[ID + 48].equals("street")){
-					yPosition -= 2;
-					car.moveY(yPosition);
-				} else if(map[ID + 1].equals("street")){
-					xPosition += 2;
-					car.moveX(xPosition);
-				} else if(map[ID - 48].equals("street")){
-					yPosition += 2;
-					car.moveY(yPosition);
-				} else {
-					xPosition -= 2;
-					car.moveX(xPosition);
+			if(destinationReached == false){
+				if(destination > position){
+					if((destination % 48) >= (position % 48)){
+						if(map[position + 48].equals("street")){
+							yPosition += 2;
+							car.moveY(yPosition);
+						} else if(map[position + 1].equals("street")){
+							xPosition += 2;
+							car.moveX(xPosition);
+						} else if(map[position - 48].equals("street")){
+							yPosition -= 2;
+							car.moveY(yPosition);
+						} else {
+							xPosition -= 2;
+							car.moveX(xPosition);
+						}
+					} else if(map[position + 48].equals("street")){
+						yPosition += 2;
+						car.moveY(yPosition);
+					} else if(map[position + 1].equals("street")){
+						xPosition -= 2;
+						car.moveX(xPosition);
+					} else if(map[position - 48].equals("street")){
+						yPosition -= 2;
+						car.moveY(yPosition);
+					} else {
+						xPosition += 2;
+						car.moveX(xPosition);
+					}
 				}
-			} else if(map[ID + 48].equals("street")){
-				yPosition -= 2;
-				car.moveY(yPosition);
-			} else if(map[ID + 1].equals("street")){
-				xPosition -= 2;
-				car.moveX(xPosition);
-			} else if(map[ID - 48].equals("street")){
-				yPosition += 2;
-				car.moveY(yPosition);
-			} else {
-				xPosition += 2;
-				car.moveX(xPosition);
-			}			
-		}	
+				else{
+					if((destination % 48) >= (position % 48)){
+						if(map[position + 48].equals("street")){
+							yPosition -= 2;
+							car.moveY(yPosition);
+						} else if(map[position + 1].equals("street")){
+							xPosition += 2;
+							car.moveX(xPosition);
+						} else if(map[position - 48].equals("street")){
+							yPosition += 2;
+							car.moveY(yPosition);
+						} else {
+							xPosition -= 2;
+							car.moveX(xPosition);
+						}
+					} else if(map[position + 48].equals("street")){
+						yPosition -= 2;
+						car.moveY(yPosition);
+					} else if(map[position + 1].equals("street")){
+						xPosition -= 2;
+						car.moveX(xPosition);
+					} else if(map[position - 48].equals("street")){
+						yPosition += 2;
+						car.moveY(yPosition);
+					} else {
+						xPosition += 2;
+						car.moveX(xPosition);
+					}			
+				}	
+			}else{
+				logOut();
+			}
+		}else{	
+			logIn();
+			drive();
+		}
 	}
 	
 	public void changeDestination(int destination){
@@ -132,4 +153,13 @@ public class Car {
 		this.direction = direction;
 	}
 	
+	public void logOut(){
+		car.logOut();
+		visible = false;
+	}
+	
+	public void logIn(){
+		car.logIn();
+		visible = true;
+	}
 }

@@ -20,14 +20,14 @@ public class Help {
 	}
 	
 	public void endTutorial(){
-		
+		//durch Benutzereingabe sollte hier das Tutorial beendet werden können.
 	}
 	
 	public void showHelp(){
-		
+		//durch Benutzereingabe sollte hier ein Hilfefenster aufgerufen werden können.
 	}
 	
 	public void closeHelp(){
-		
+		//durch Benutzereingabe sollte hier das Hilfefenster beendet werden können.
 	}
 }

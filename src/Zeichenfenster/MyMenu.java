@@ -1,20 +1,11 @@
 package Zeichenfenster;
 
-import java.awt.Frame;
-import java.awt.MenuBar;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
-
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
-import javax.swing.KeyStroke;
-import javax.swing.Popup;
 
 import com.sun.glass.events.KeyEvent;
 

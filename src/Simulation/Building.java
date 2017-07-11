@@ -1,12 +1,5 @@
 package Simulation;
 
 public class Building {
-	
-	private SimulationCalculator sc;
-	private Car cars;
-	private Car[] car;
-
-	public Building(){
-		
-	}
+	//entfällt, da hier die, durch den Benutzer ausgelösten Events gespeichert werden sollten
 }

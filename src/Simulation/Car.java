@@ -21,6 +21,7 @@ public class Car {
 	private SimulationCalculator sc;
 	private MyCanvas car;
 	private boolean visible;
+	private boolean driving;
 	
 	public Car(SimulationCalculator sc,JPanel p,int x, int y, int ID, int destination, int direction){
 		if(direction == 0 || direction == 2 || direction == 4){
@@ -39,6 +40,7 @@ public class Car {
 		this.sc = sc;
 		map = sc.getMap();
 		visible = true;
+		driving = false;
 	}
 	
 	public void drive(){
@@ -54,61 +56,78 @@ public class Car {
 			case 5 : if(destination == position - 1); destinationReached = true; break;
 			}
 			if(destinationReached == false){
+				driving = true;
 				if(destination > position){
-					if((destination % 48) >= (position % 48)){
+					if((destination % 48) > (position % 48)){
 						if(map[position + 48].equals("street")){
 							yPosition += 2;
+							direction = 3;
 							car.moveY(yPosition);
 						} else if(map[position + 1].equals("street")){
 							xPosition += 2;
+							direction = 2;
 							car.moveX(xPosition);
 						} else if(map[position - 48].equals("street")){
 							yPosition -= 2;
+							direction = 5;
 							car.moveY(yPosition);
 						} else {
 							xPosition -= 2;
+							direction = 4;
 							car.moveX(xPosition);
 						}
 					} else if(map[position + 48].equals("street")){
 						yPosition += 2;
+						direction = 3;
 						car.moveY(yPosition);
 					} else if(map[position + 1].equals("street")){
 						xPosition -= 2;
+						direction = 4;
 						car.moveX(xPosition);
 					} else if(map[position - 48].equals("street")){
 						yPosition -= 2;
+						direction = 5;
 						car.moveY(yPosition);
 					} else {
 						xPosition += 2;
+						direction = 2;
 						car.moveX(xPosition);
 					}
 				}
 				else{
-					if((destination % 48) >= (position % 48)){
+					if((destination % 48) > (position % 48)){
 						if(map[position + 48].equals("street")){
 							yPosition -= 2;
+							direction = 5;
 							car.moveY(yPosition);
 						} else if(map[position + 1].equals("street")){
 							xPosition += 2;
+							direction = 2;
 							car.moveX(xPosition);
 						} else if(map[position - 48].equals("street")){
 							yPosition += 2;
+							direction = 3;
 							car.moveY(yPosition);
 						} else {
 							xPosition -= 2;
+							direction = 4;
 							car.moveX(xPosition);
 						}
 					} else if(map[position + 48].equals("street")){
 						yPosition -= 2;
+						direction = 5;
 						car.moveY(yPosition);
 					} else if(map[position + 1].equals("street")){
 						xPosition -= 2;
+						direction = 4;
 						car.moveX(xPosition);
 					} else if(map[position - 48].equals("street")){
 						yPosition += 2;
+						direction = 3;
 						car.moveY(yPosition);
 					} else {
 						xPosition += 2;
+						direction = 2;
 						car.moveX(xPosition);
 					}			
 				}	
@@ -153,13 +172,17 @@ public class Car {
 		this.direction = direction;
 	}
 	
-	public void logOut(){
+	private void logOut(){
 		car.logOut();
 		visible = false;
 	}
 	
-	public void logIn(){
+	private void logIn(){
 		car.logIn();
 		visible = true;
+	}
+	
+	public boolean getDriving(){
+		return driving;
 	}
 }
